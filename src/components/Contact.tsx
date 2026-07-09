@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Mail, Send, MessageCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Send, MessageCircle, CheckCircle2, XCircle, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { useState } from 'react';
 
@@ -12,6 +12,14 @@ export const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [toast, setToast] = useState<{show: boolean, message: string, type: 'success' | 'error'}>({ show: false, message: '', type: 'success' });
+
+  const showToast = (message: string, type: 'success' | 'error') => {
+    setToast({ show: true, message, type });
+    setTimeout(() => {
+      setToast(prev => ({ ...prev, show: false }));
+    }, 5000);
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -44,14 +52,14 @@ export const Contact = () => {
       const result = await response.json();
 
       if (result.success) {
-        alert("Pesan berhasil dikirim ke email!");
+        showToast("Pesan berhasil dikirim! Kami akan segera membalasnya.", "success");
         setFormData({ name: '', email: '', message: '' });
       } else {
-        alert("Gagal mengirim pesan, silakan coba lagi.");
+        showToast("Gagal mengirim pesan, silakan coba lagi.", "error");
       }
     } catch (error) {
       console.error("Terjadi kesalahan:", error);
-      alert("Terjadi kesalahan, silakan coba lagi.");
+      showToast("Terjadi kesalahan jaringan, silakan coba lagi.", "error");
     } finally {
       setIsSubmitting(false);
     }
@@ -175,6 +183,31 @@ export const Contact = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Toast Notification */}
+      <AnimatePresence>
+        {toast.show && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.9 }}
+            className={`fixed bottom-8 right-8 z-[100] flex items-center gap-3 px-6 py-4 rounded-2xl shadow-2xl border backdrop-blur-md ${
+              toast.type === 'success' 
+                ? 'bg-green-500/10 border-green-500/20 text-green-400' 
+                : 'bg-red-500/10 border-red-500/20 text-red-400'
+            }`}
+          >
+            {toast.type === 'success' ? <CheckCircle2 size={24} /> : <XCircle size={24} />}
+            <span className="font-medium text-sm md:text-base">{toast.message}</span>
+            <button 
+              onClick={() => setToast(prev => ({ ...prev, show: false }))}
+              className="ml-4 p-1 rounded-full hover:bg-white/10 transition-colors"
+            >
+              <X size={16} />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
