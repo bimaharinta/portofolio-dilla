@@ -33,7 +33,7 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     const dataToSubmit = {
-      access_key: "9f98f5b6-ff48-4d81-a782-8e8631ccc966",
+      access_key: "09da26d9-c716-4488-ab67-a633f77d182d",
       name: formData.name,
       email: formData.email,
       message: formData.message,
