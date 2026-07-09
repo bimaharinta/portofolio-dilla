@@ -1,10 +1,62 @@
 import { motion } from 'framer-motion';
 import { Mail, Send, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
+import { useState } from 'react';
 
 export const Contact = () => {
   const { t } = useLanguage();
   
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const dataToSubmit = {
+      access_key: "9f98f5b6-ff48-4d81-a782-8e8631ccc966",
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(dataToSubmit),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Pesan berhasil dikirim ke email!");
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert("Gagal mengirim pesan, silakan coba lagi.");
+      }
+    } catch (error) {
+      console.error("Terjadi kesalahan:", error);
+      alert("Terjadi kesalahan, silakan coba lagi.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="relative min-h-screen py-24 px-6 z-10 flex items-center justify-center">
       <div className="max-w-3xl mx-auto w-full">
@@ -31,12 +83,16 @@ export const Contact = () => {
           {/* Subtle background glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent-pink/20 via-transparent to-transparent pointer-events-none" />
 
-          <form className="relative z-10 flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
+          <form className="relative z-10 flex flex-col gap-6" onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="flex flex-col gap-2">
                 <label className="text-sm text-accent-pink font-medium">{t('contact_name_label')}</label>
                 <input 
                   type="text" 
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="bg-bg-secondary border border-glass-border rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-accent-pink focus:ring-1 focus:ring-accent-pink transition-all duration-300 placeholder:text-text-muted"
                   placeholder={t('contact_name_placeholder')}
                 />
@@ -45,6 +101,10 @@ export const Contact = () => {
                 <label className="text-sm text-accent-pink font-medium">{t('contact_email_label')}</label>
                 <input 
                   type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="bg-bg-secondary border border-glass-border rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-accent-pink focus:ring-1 focus:ring-accent-pink transition-all duration-300 placeholder:text-text-muted"
                   placeholder={t('contact_email_placeholder')}
                 />
@@ -54,6 +114,10 @@ export const Contact = () => {
             <div className="flex flex-col gap-2">
               <label className="text-sm text-accent-pink font-medium">{t('contact_message_label')}</label>
               <textarea 
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
                 rows={4}
                 className="bg-bg-secondary border border-glass-border rounded-lg px-4 py-3 text-text-primary focus:outline-none focus:border-accent-pink focus:ring-1 focus:ring-accent-pink transition-all duration-300 placeholder:text-text-muted resize-none"
                 placeholder={t('contact_message_placeholder')}
@@ -61,11 +125,13 @@ export const Contact = () => {
             </div>
 
             <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="mt-4 w-full py-4 rounded-lg bg-gradient-to-r from-accent-pink to-accent-purple text-white font-medium flex items-center justify-center gap-2 hover:shadow-[0_0_20px_var(--accent-pink)] transition-shadow duration-300 opacity-90 hover:opacity-100"
+              type="submit"
+              disabled={isSubmitting}
+              whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+              whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+              className={`mt-4 w-full py-4 rounded-lg bg-gradient-to-r from-accent-pink to-accent-purple text-white font-medium flex items-center justify-center gap-2 transition-all duration-300 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:shadow-[0_0_20px_var(--accent-pink)] opacity-90 hover:opacity-100'}`}
             >
-              <span>{t('contact_btn_send')}</span>
+              <span>{isSubmitting ? 'Mengirim...' : t('contact_btn_send')}</span>
               <Send size={18} />
             </motion.button>
           </form>
