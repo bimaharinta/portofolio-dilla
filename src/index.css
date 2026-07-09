@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-purple: var(--accent-purple);
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --color-glass-border-hover: var(--glass-border-hover);
+  --color-glass-shadow: var(--glass-shadow);
+  --color-glass-shadow-hover: var(--glass-shadow-hover);
+}
+
+:root {
+  /* LIGHT MODE (Dominant White & Purple) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #fdf4ff; /* fuchsia-50 */
+  --text-primary: #3b0764; /* purple-900 */
+  --text-secondary: #6b21a8; /* purple-800 */
+  --text-muted: #a855f7; /* purple-500 */
+  
+  --accent-pink: #d946ef; /* fuchsia-500 */
+  --accent-purple: #9333ea; /* purple-600 */
+  
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(168, 85, 247, 0.3);
+  --glass-border-hover: rgba(168, 85, 247, 0.6);
+  --glass-shadow: rgba(168, 85, 247, 0.15);
+  --glass-shadow-hover: rgba(168, 85, 247, 0.3);
+}
+
+.dark {
+  /* DARK MODE (Current Style) */
+  --bg-primary: #0a0510;
+  --bg-secondary: #150a1f;
+  --text-primary: #ffffff;
+  --text-secondary: #d1d5db; /* gray-300 */
+  --text-muted: #9ca3af; /* gray-400 */
+  
+  --accent-pink: #ec4899; /* pink-500 */
+  --accent-purple: #a855f7; /* purple-500 */
+  
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(236, 72, 153, 0.2);
+  --glass-border-hover: rgba(236, 72, 153, 0.5);
+  --glass-shadow: rgba(236, 72, 153, 0.1);
+  --glass-shadow-hover: rgba(236, 72, 153, 0.3);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary font-sans antialiased selection:bg-accent-pink/30 selection:text-text-primary transition-colors duration-500;
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-glass-bg backdrop-blur-md border border-glass-border shadow-[0_0_15px_var(--glass-shadow)] rounded-2xl;
+  }
+  
+  .glass-panel-hover {
+    @apply hover:border-glass-border-hover hover:shadow-[0_0_30px_var(--glass-shadow-hover)] transition-all duration-300;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-pink to-accent-purple;
+  }
+}
+
+/* Custom CSS animations for Anti-Gravity effect that might be easier with CSS than pure framer-motion sometimes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-pink);
+}
