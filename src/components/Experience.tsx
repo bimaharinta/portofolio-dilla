@@ -186,9 +186,9 @@ export const Experience = () => {
                                 <img src={img.src} alt={img.caption} className="w-24 h-16 md:w-32 md:h-20 object-cover rounded-lg shrink-0" />
                                 <p className="text-text-primary font-medium text-sm md:text-base leading-snug pt-1">{img.caption}</p>
                               </div>
-                              {img.description && (
+                              {(img as any).description && (
                                 <p className="text-text-muted text-xs md:text-sm leading-relaxed">
-                                  {img.description}
+                                  {(img as any).description}
                                 </p>
                               )}
                             </div>

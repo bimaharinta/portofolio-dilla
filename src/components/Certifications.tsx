@@ -50,7 +50,7 @@ const getCertificationsData = (lang: string) => [
 ];
 
 export const Certifications = () => {
-  const { lang, t } = useLanguage();
+  const { lang } = useLanguage();
   const certificationsData = getCertificationsData(lang);
 
   const renderCard = (item: any, index: number) => (
