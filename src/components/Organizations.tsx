@@ -8,7 +8,7 @@ const getOrganizationsData = (lang: string) => [
     title: "PKM Center Unesa",
     role: lang === 'ID' ? "Desain dan Dokumentasi" : "Design and Documentation",
     date: lang === 'ID' ? "Feb 2024 – Feb 2025" : "Feb 2024 – Feb 2025",
-    logo: "/src/assets/pkm-center-logo.png",
+    logo: "/assets/pkm-center-logo.png",
     description: ""
   },
   {
@@ -16,7 +16,7 @@ const getOrganizationsData = (lang: string) => [
     title: "Youth Ranger Indonesia",
     role: lang === 'ID' ? "Anggota" : "Member",
     date: "Jul 2024 – Dec 2024",
-    logo: "/src/assets/youth-ranger-logo.png",
+    logo: "/assets/youth-ranger-logo.png",
     description: ""
   }
 ];

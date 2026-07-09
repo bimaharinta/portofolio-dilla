@@ -10,7 +10,7 @@ const getCertificationsData = (lang: string) => [
     description: "Badan Nasional Sertifikasi Profesi (BNSP)",
     badge: lang === 'ID' ? "Sertifikasi" : "Certification",
     image: null,
-    logo: "/src/assets/bnsp-logo.png",
+    logo: "/assets/bnsp-logo.png",
     link: "https://drive.google.com/file/d/1A_G-syVIMEkGBDBtPyHMbznksEdCctU6/view",
     buttonText: lang === 'ID' ? "Lihat Kredensial" : "Show credential"
   },
@@ -21,7 +21,7 @@ const getCertificationsData = (lang: string) => [
     description: "Amazon Web Services (AWS)",
     badge: lang === 'ID' ? "Sertifikasi" : "Certification",
     image: null,
-    logo: "/src/assets/aws-logo.png",
+    logo: "/assets/aws-logo.png",
     link: "https://drive.google.com/drive/folders/1XXIMSDBbTnVsC9B9AAXYMg5lzmFx20TJ",
     buttonText: lang === 'ID' ? "Lihat Kredensial" : "Show credential"
   },
@@ -32,7 +32,7 @@ const getCertificationsData = (lang: string) => [
     description: "KarirNex - Credential ID No. 0145/B-2/KBT.EXCEL.2/KRX/V/2024",
     badge: lang === 'ID' ? "Sertifikasi" : "Certification",
     image: null,
-    logo: "/src/assets/karirnex-logo.png",
+    logo: "/assets/karirnex-logo.png",
     link: "https://drive.google.com/file/d/1rXF7IoUfjmRrj2SugCzdt7uvEfIfdvrq/view?usp=drivesdk",
     buttonText: lang === 'ID' ? "Lihat Kredensial" : "Show credential"
   },
@@ -43,7 +43,7 @@ const getCertificationsData = (lang: string) => [
     description: "RevoU",
     badge: lang === 'ID' ? "Sertifikasi" : "Certification",
     image: null,
-    logo: "/src/assets/revou-logo.png",
+    logo: "/assets/revou-logo.png",
     link: "https://certificates.revou.co/dilla-ramadhani-certificate-completion-dmmc23.pdf",
     buttonText: lang === 'ID' ? "Lihat Kredensial" : "Show credential"
   }

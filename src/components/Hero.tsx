@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import profilePic from '../assets/dilla_profile.png';
+
 import { useLanguage } from '../context/LanguageContext';
 
 export const Hero = () => {
@@ -62,7 +62,7 @@ export const Hero = () => {
               {/* Central Photo Element */}
               <div className="absolute -inset-4 flex items-end justify-center z-10 pointer-events-none">
                  <img 
-                   src={profilePic}
+                   src="/assets/dilla_profile.png"
                    alt="Dilla Ramadhani" 
                    className="w-[105%] h-[105%] object-cover object-top"
                    style={{

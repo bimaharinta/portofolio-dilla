@@ -11,13 +11,13 @@ const getEducationData = (lang: string) => [
     period: "Jan 2022 - Jan 2026",
     location: lang === 'ID' ? "Surabaya, Jawa Timur, Indonesia" : "Surabaya, East Java, Indonesia",
     type: "education",
-    logo: "/src/assets/unesa-logo.png",
+    logo: "/assets/unesa-logo.png",
     description: lang === 'ID' 
       ? "Grade: 3.85/4.00\nActivities and societies: UKM Kewirausahaan Unesa, PKM Center Unesa\n\n• The Processing of 2023 Sakernas Microdata from Badan Pusat Statistik in the Article \"Factors Influencing Employment: An Analysis of Sociodemographic and Human Capital Factors in Indonesia\"\n• A Journal Publication Utilizing Sakernas Microdata, Processed with Stata, Titled \"Analysis of Odds Ratios for Employment Status and Migration\"\n• A concentration in Public Economics with an analysis of regional and national tax policies."
       : "Grade: 3.85/4.00\nActivities and societies: UKM Kewirausahaan Unesa, PKM Center Unesa\n\n• The Processing of 2023 Sakernas Microdata from Badan Pusat Statistik in the Article \"Factors Influencing Employment: An Analysis of Sociodemographic and Human Capital Factors in Indonesia\"\n• A Journal Publication Utilizing Sakernas Microdata, Processed with Stata, Titled \"Analysis of Odds Ratios for Employment Status and Migration\"\n• A concentration in Public Economics with an analysis of regional and national tax policies.",
     images: [
-      { src: "/src/assets/education-1.png", caption: lang === 'ID' ? "Artikel Ketenagakerjaan" : "Employment Article" },
-      { src: "/src/assets/education-2.png", caption: lang === 'ID' ? "Jurnal Mikro Data Sakernas" : "Sakernas Microdata Journal" }
+      { src: "/assets/education-1.png", caption: lang === 'ID' ? "Artikel Ketenagakerjaan" : "Employment Article" },
+      { src: "/assets/education-2.png", caption: lang === 'ID' ? "Jurnal Mikro Data Sakernas" : "Sakernas Microdata Journal" }
     ],
     skills: ["Stata", "EViews", "Microsoft Word", "Microsoft Excel"]
   },
@@ -28,10 +28,10 @@ const getEducationData = (lang: string) => [
     period: "Sep 2024 - Dec 2024",
     location: lang === 'ID' ? "Surabaya, Jawa Timur, Indonesia" : "Surabaya, East Java, Indonesia",
     type: "education",
-    logo: "/src/assets/unair-logo.png",
+    logo: "/assets/unair-logo.png",
     description: "Grade: 94.3/100 (A)",
     images: [
-      { src: "/src/assets/education-3.png", caption: lang === 'ID' ? "Transkrip Akademik" : "Academic Transcript" }
+      { src: "/assets/education-3.png", caption: lang === 'ID' ? "Transkrip Akademik" : "Academic Transcript" }
     ],
     skills: ["Digital Marketing", "Microsoft Excel", "Social Media Marketing"]
   }

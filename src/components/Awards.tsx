@@ -10,8 +10,8 @@ const getAwardsData = (lang: string) => [
     date: lang === 'ID' ? "Agt 2024" : "Aug 2024",
     description: lang === 'ID' ? "Kompetisi Esai Internasional Ekonomi Berkelanjutan 2024 yang diselenggarakan oleh Himpunan Mahasiswa Prodi Ekonomi Fakultas Ekonomika dan Bisnis Universitas Negeri Surabaya Dengan tema \"Inovasi Ekonomi untuk Mewujudkan Tujuan Pembangunan Berkelanjutan\"" : "Sustainable Economics International Essay Competition 2024 organized by Himpunan Mahasiswa Prodi Ekonomi Fakultas Ekonomika dan Bisnis Universitas Negeri Surabaya With the theme \"Economic Innovation to Realize the Sustainable Development Goals\"",
     badge: lang === 'ID' ? "Medali Perunggu" : "Bronze Medal",
-    image: "/src/assets/award-econovation.png",
-    logo: "/src/assets/hima-logo.png"
+    image: "/assets/award-econovation.png",
+    logo: "/assets/hima-logo.png"
   },
   {
     id: 2,

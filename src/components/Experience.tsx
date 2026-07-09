@@ -10,11 +10,11 @@ const getExperiences = (lang: string) => [
     period: lang === 'ID' ? "Feb 2026 - Mar 2026 · 2 bln" : "Feb 2026 - Mar 2026 · 2 mos",
     location: lang === 'ID' ? "Tuban, Jawa Timur, Indonesia · Di lokasi" : "Tuban, East Java, Indonesia · On-site",
     type: "work",
-    logo: "/src/assets/bps-logo.png",
+    logo: "/assets/bps-logo.png",
     description: "",
     images: [
-      { src: "/src/assets/sensus-1.png", caption: lang === 'ID' ? "Survey Penduduk Kabupaten Tuban" : "Population Survey of Tuban Regency" },
-      { src: "/src/assets/sensus-2.png", caption: lang === 'ID' ? "Data Kependudukan Kabupaten Tuban" : "Population Data of Tuban Regency" }
+      { src: "/assets/sensus-1.png", caption: lang === 'ID' ? "Survey Penduduk Kabupaten Tuban" : "Population Survey of Tuban Regency" },
+      { src: "/assets/sensus-2.png", caption: lang === 'ID' ? "Data Kependudukan Kabupaten Tuban" : "Population Data of Tuban Regency" }
     ]
   },
   {
@@ -24,7 +24,7 @@ const getExperiences = (lang: string) => [
     period: lang === 'ID' ? "Des 2025 - Mar 2026 · 4 bln" : "Dec 2025 - Mar 2026 · 4 mos",
     location: lang === 'ID' ? "Surabaya, Jawa Timur, Indonesia · Jarak jauh" : "Surabaya, East Java, Indonesia · Remote",
     type: "work",
-    logo: "/src/assets/pawonjani-logo.png",
+    logo: "/assets/pawonjani-logo.png",
     description: lang === 'ID' 
       ? "• Mengembangkan dan memelihara identitas merek Pawonjani sebagai mitra katering yang terpercaya, kreatif, dan berkualitas di pasar yang kompetitif.\n\n• Mengelola ekosistem digital, termasuk situs web, SEO/SEM, dan saluran media sosial (Instagram, Facebook). Membuat konten visual dan tertulis yang menarik seperti sorotan menu, testimoni klien, dan dokumentasi acara untuk berinteraksi dengan audiens target.\n\n• Merencanakan dan melaksanakan kampanye pemasaran multi-saluran (email, media sosial, kemitraan) untuk menghasilkan prospek dan membangun jalur penjualan yang kuat."
       : "• Develop and maintain Pawonjani's brand identity as a trusted, creative, and high-quality catering partner in a competitive market.\n\n• Manage the digital ecosystem, including website, SEO/SEM, and social media channels (Instagram, Facebook). Create compelling visual and written content such as menu highlights, client testimonials, and event showcases to engage the target audience.\n\n• Plan and execute multi-channel marketing campaigns (email, social media, partnerships) to generate inquiries and build a robust sales pipeline for event inquiries.",
@@ -36,13 +36,13 @@ const getExperiences = (lang: string) => [
     period: lang === 'ID' ? "Mar 2025 - Jun 2025 · 4 bln" : "Mar 2025 - Jun 2025 · 4 mos",
     location: lang === 'ID' ? "Bojonegoro, Jawa Timur, Indonesia · Di lokasi" : "Bojonegoro, East Java, Indonesia · On-site",
     type: "work",
-    logo: "/src/assets/djpb-logo.png",
+    logo: "/assets/djpb-logo.png",
     description: lang === 'ID'
       ? "Seksi Pencairan Dana bertugas mengelola basis data pelaksanaan anggaran, memeriksa dokumen perintah pembayaran, menerbitkan Surat Perintah Pencairan Dana (SP2D) atas nama Menteri Keuangan (Bendahara Umum Negara), mengelola basis data pembayaran gaji, mengesahkan surat keterangan penghentian pembayaran, serta menyusun laporan realisasi pencairan anggaran."
       : "The Fund Disbursement Section is tasked with managing the database for budget execution, examining payment order documents, issuing Fund Disbursement Orders (SP2D) in the name of the Minister of Finance (State Treasurer), managing the salary payment database, authorizing payment stoppage certificates, and compiling reports on budget disbursement realization.",
     images: [
-      { src: "/src/assets/djpb-1.png", caption: lang === 'ID' ? "Diskusi Berita Keuangan Dan Perbendaharaan" : "Financial and Treasury News Discussion" },
-      { src: "/src/assets/djpb-2.png", caption: lang === 'ID' ? "Rapat Evaluasi Terkait SP2D, SPM dan Pencairan Dana" : "Evaluation Meeting Regarding SP2D, SPM and Fund Disbursement" }
+      { src: "/assets/djpb-1.png", caption: lang === 'ID' ? "Diskusi Berita Keuangan Dan Perbendaharaan" : "Financial and Treasury News Discussion" },
+      { src: "/assets/djpb-2.png", caption: lang === 'ID' ? "Rapat Evaluasi Terkait SP2D, SPM dan Pencairan Dana" : "Evaluation Meeting Regarding SP2D, SPM and Fund Disbursement" }
     ],
     skills: ["Economic Research", "Microsoft Excel", "Microsoft Word", "Finance"]
   },
@@ -53,7 +53,7 @@ const getExperiences = (lang: string) => [
     period: lang === 'ID' ? "Feb 2025 - Jun 2025 · 5 bln" : "Feb 2025 - Jun 2025 · 5 mos",
     location: lang === 'ID' ? "Sleman, Daerah Istimewa Yogyakarta, Indonesia · Jarak jauh" : "Sleman, Special Region of Yogyakarta, Indonesia · Remote",
     type: "work",
-    logo: "/src/assets/vinix-logo.png",
+    logo: "/assets/vinix-logo.png",
     description: lang === 'ID'
       ? "Lulusan Studi Independen Digital Marketing berbasis proyek di VINIX7 (Kampus Merdeka). Dilatih oleh mentor industri dalam strategi berbasis data, mulai dari perencanaan konten hingga analitik kampanye. Siap mengaplikasikan keterampilan kreatif dan analitis untuk membangun strategi merek yang efektif."
       : "Graduate of a project-based Digital Marketing Independent Study at VINIX7 (Kampus Merdeka). Trained by industry mentors in data driven strategy, from content planning to campaign analytics. Ready to apply creative and analytical skills to build effective brand strategies",
@@ -66,14 +66,14 @@ const getExperiences = (lang: string) => [
     period: lang === 'ID' ? "Jan 2025 - Mar 2025 · 3 bln" : "Jan 2025 - Mar 2025 · 3 mos",
     location: lang === 'ID' ? "Bojonegoro, Jawa Timur, Indonesia · Di lokasi" : "Bojonegoro, East Java, Indonesia · On-site",
     type: "work",
-    logo: "/src/assets/bojonegoro-logo.png",
+    logo: "/assets/bojonegoro-logo.png",
     description: lang === 'ID'
       ? "• Mendukung staf di Biro Perencanaan Ekonomi, memberikan bantuan esensial dalam koordinasi administratif, persiapan dokumen perencanaan dan anggaran, serta memastikan efisiensi operasional. Berdedikasi untuk mendukung perumusan kebijakan, pemantauan, dan evaluasi di berbagai sektor ekonomi makro, mikro, BUMD/BLUD, dan pengelolaan sumber daya alam di wilayah Bojonegoro\n\n• Membantu dalam tugas persiapan dan administratif untuk rapat koordinasi tingkat tinggi yang dihadiri oleh Bupati Bojonegoro, pimpinan TNI dan Polri setempat (Forkopimda), dan kepala instansi terkait.\n\n• Mengamati bagaimana arahan pemerintah pusat dari Kemendagri diterjemahkan menjadi tindakan lokal, seperti mengaktifkan Tim Pengendali Inflasi Daerah (TPID) dan Satgas Operasi Pasar"
       : "• Support staff in the Economic Planning Bureau, providing essential assistance in administrative coordination, planning and budget document preparation, and ensuring operational efficiency. Dedicated to supporting policy formulation, monitoring, and evaluation across key economic sector macroeconomics, microeconomics, BUMD/BLUD, and natural resource management within the Bojonegoro region\n\n• Assisted in the preparatory and administrative tasks for a high-level coordination meeting attended by the Regent of Bojonegoro, local military and police leadership (Forkopimda), and heads of relevant agencies.\n\n• Observed how central government directives from Kemendagri are translated into local action, such as activating the Regional Inflation Control Team (TPID) and Market Operation Task Forces",
     images: [
-      { src: "/src/assets/bojonegoro-1.png", caption: lang === 'ID' ? "Koordinasi Rapat Pengendalian Inflasi Daerah Bersama Kemendagri" : "Coordination of Regional Inflation Control Meeting with Kemendagri" },
+      { src: "/assets/bojonegoro-1.png", caption: lang === 'ID' ? "Koordinasi Rapat Pengendalian Inflasi Daerah Bersama Kemendagri" : "Coordination of Regional Inflation Control Meeting with Kemendagri" },
       { 
-        src: "/src/assets/bojonegoro-2.png", 
+        src: "/assets/bojonegoro-2.png", 
         caption: lang === 'ID' ? "Staff Pembantu Perencanaan Biro Perekonomian" : "Assistant Staff for Economic Bureau Planning",
         description: lang === 'ID' 
           ? "Mendukung staf di Biro Perencanaan Ekonomi, memberikan bantuan esensial dalam koordinasi administratif." 
@@ -89,7 +89,7 @@ const getExperiences = (lang: string) => [
     period: lang === 'ID' ? "Jan 2024 - Jan 2025 · 1 thn 1 bln" : "Jan 2024 - Jan 2025 · 1 yr 1 mo",
     location: lang === 'ID' ? "Surabaya, Jawa Timur, Indonesia · Jarak jauh" : "Surabaya, East Java, Indonesia · Remote",
     type: "work",
-    logo: "/src/assets/pss-logo.png",
+    logo: "/assets/pss-logo.png",
     description: lang === 'ID'
       ? "• Mengidentifikasi, bernegosiasi, dan mengamankan kemitraan dengan perusahaan, LSM, lembaga pemerintah, dan kelompok masyarakat untuk mendanai dan mengimplementasikan proyek konservasi dan revitalisasi sungai.\n\n• Mengembangkan dan mengusulkan model bisnis yang layak untuk inisiatif kepedulian sungai, seperti program sponsor perusahaan, ekowisata, layanan pengelolaan limbah, atau lini produk berkelanjutan yang terkait dengan kesehatan sungai.\n\n• Meneliti, menulis proposal, dan melakukan presentasi untuk mengamankan hibah, investasi dampak, dan pendanaan CSR (Corporate Social Responsibility) untuk infrastruktur dan program terkait sungai yang kritis."
       : "• Identify, negotiate, and secure partnerships with corporations, NGOs, government agencies, and community groups to fund and implement river conservation and revitalization projects.\n\n• Develop and propose viable business models for river care initiatives, such as corporate sponsorship programs, eco-tourism, waste management services, or sustainable product lines linked to river health.\n\n• Research, write proposals, and pitch to secure grants, impact investments, and CSR (Corporate Social Responsibility) funding for critical river-related infrastructure and programs.",
