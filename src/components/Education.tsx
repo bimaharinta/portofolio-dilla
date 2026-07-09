@@ -6,14 +6,14 @@ import { useState } from 'react';
 const getEducationData = (lang: string) => [
   {
     id: 1,
-    degree: "Mahasiswa, Ilmu Ekonomi",
+    degree: lang === 'ID' ? "Mahasiswa, Ilmu Ekonomi" : "Student, Economics",
     institution: "Universitas Negeri Surabaya",
     period: "Jan 2022 - Jan 2026",
     location: lang === 'ID' ? "Surabaya, Jawa Timur, Indonesia" : "Surabaya, East Java, Indonesia",
     type: "education",
     logo: "/assets/unesa-logo.png",
     description: lang === 'ID' 
-      ? "Grade: 3.85/4.00\nActivities and societies: UKM Kewirausahaan Unesa, PKM Center Unesa\n\n• The Processing of 2023 Sakernas Microdata from Badan Pusat Statistik in the Article \"Factors Influencing Employment: An Analysis of Sociodemographic and Human Capital Factors in Indonesia\"\n• A Journal Publication Utilizing Sakernas Microdata, Processed with Stata, Titled \"Analysis of Odds Ratios for Employment Status and Migration\"\n• A concentration in Public Economics with an analysis of regional and national tax policies."
+      ? "IPK: 3.85/4.00\nAktivitas dan komunitas: UKM Kewirausahaan Unesa, PKM Center Unesa\n\n• Pengolahan Data Mikro Sakernas 2023 dari Badan Pusat Statistik pada Artikel \"Faktor-faktor yang Mempengaruhi Pekerjaan: Analisis Faktor Sosiodemografi dan Modal Manusia di Indonesia\"\n• Publikasi Jurnal Menggunakan Data Mikro Sakernas, Diolah dengan Stata, Berjudul \"Analisis Rasio Odds terhadap Status Pekerjaan dan Migrasi\"\n• Konsentrasi pada Ekonomi Publik dengan analisis kebijakan pajak daerah dan nasional."
       : "Grade: 3.85/4.00\nActivities and societies: UKM Kewirausahaan Unesa, PKM Center Unesa\n\n• The Processing of 2023 Sakernas Microdata from Badan Pusat Statistik in the Article \"Factors Influencing Employment: An Analysis of Sociodemographic and Human Capital Factors in Indonesia\"\n• A Journal Publication Utilizing Sakernas Microdata, Processed with Stata, Titled \"Analysis of Odds Ratios for Employment Status and Migration\"\n• A concentration in Public Economics with an analysis of regional and national tax policies.",
     images: [
       { src: "/assets/education-1.png", caption: lang === 'ID' ? "Artikel Ketenagakerjaan" : "Employment Article" },
@@ -23,13 +23,13 @@ const getEducationData = (lang: string) => [
   },
   {
     id: 2,
-    degree: "5th Semester, Independent Student Entrepreneurship Academy Program",
+    degree: lang === 'ID' ? "Semester 5, Program Wirausaha Merdeka" : "5th Semester, Independent Student Entrepreneurship Academy Program",
     institution: "Universitas Airlangga",
     period: "Sep 2024 - Dec 2024",
     location: lang === 'ID' ? "Surabaya, Jawa Timur, Indonesia" : "Surabaya, East Java, Indonesia",
     type: "education",
     logo: "/assets/unair-logo.png",
-    description: "Grade: 94.3/100 (A)",
+    description: lang === 'ID' ? "Nilai: 94.3/100 (A)" : "Grade: 94.3/100 (A)",
     images: [
       { src: "/assets/education-3.png", caption: lang === 'ID' ? "Transkrip Akademik" : "Academic Transcript" }
     ],
